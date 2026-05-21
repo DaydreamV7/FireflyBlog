@@ -52,7 +52,7 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 			...(siteConfig.pages.sponsor ? [LinkPreset.Sponsor] : []),
 
 			// 关于页面
-			LinkPreset.About,
+			// LinkPreset.About,
 		],
 	});
 
@@ -64,24 +64,24 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 
 		// 子菜单
 		children: [
-			{
-				name: "GitHub",
-				url: "https://github.com/CuteLeaf/Firefly",
-				external: true,
-				icon: "fa7-brands:github",
-			},
-			{
-				name: "Gitee",
-				url: "https://gitee.com/CuteLeaf/Firefly",
-				external: true,
-				icon: "fa7-brands:gitee",
-			},
-			{
-				name: "QQ交流群",
-				url: "https://qm.qq.com/q/ZGsFa8qX2G",
-				external: true,
-				icon: "fa7-brands:qq",
-			},
+			// {
+			// 	name: "GitHub",
+			// 	url: "https://github.com/CuteLeaf/Firefly",
+			// 	external: true,
+			// 	icon: "fa7-brands:github",
+			// },
+			// {
+			// 	name: "Gitee",
+			// 	url: "https://gitee.com/CuteLeaf/Firefly",
+			// 	external: true,
+			// 	icon: "fa7-brands:gitee",
+			// },
+			// {
+			// 	name: "QQ交流群",
+			// 	url: "https://qm.qq.com/q/ZGsFa8qX2G",
+			// 	external: true,
+			// 	icon: "fa7-brands:qq",
+			// },
 		],
 	});
 
