@@ -2,7 +2,7 @@
 title: CS2-Dust2基本控图小tips
 published: 2026-05-26
 description: 近四个礼拜对学不会控图的队友被卖背身、无补枪丢控图有感而发
-image: /assets/images/dream/真岛吾郎像素.jpg
+image: /assets/images/game/CS2.jpg
 tags: [游戏教学, 游戏, CS2，游戏战术]
 category: 游戏教学
 draft: false
@@ -33,19 +33,12 @@ comment: true
 
 
 
-参考视频
-
+# 参考视频
 <iframe width="100%" height="468"
-
-  src="//player.bilibili.com/player.html?bvid=[BV1YSxceUEoc](https://www.bilibili.com/video/BV1YSxceUEoc)&p=1&autoplay=0"
-
+  src="//player.bilibili.com/player.html?bvid=BV1YSxceUEoc&p=1&autoplay=0"
   scrolling="no" border="0" frameborder="no"
-
   framespacing="0" allowfullscreen="true">
-
 </iframe>
-
-
 
 # 默认开局
 <!-- 这是一张图片，ocr 内容为： -->
