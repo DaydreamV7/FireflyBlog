@@ -91,11 +91,8 @@ sudo systemctl stop docker docker.socket containerd 2>/dev/null
 sudo pkill dockerd 2>/dev/null
 ```
 
-## 尝试停止可能正在运行的Docker守护进程
-<font style="color:rgb(15, 17, 21);">使用以下命令，直接将可用的国内镜像源写入配置文件。多个源可以提高容错性。</font>
-
-<font style="color:rgb(15, 17, 21);">bash</font>
-
+## 创建或修改配置文件
+使用以下命令，直接将可用的国内镜像源写入配置文件。多个源可以提高容错性。
 ```plain
 # 创建配置目录
 sudo mkdir -p /etc/docker
@@ -111,32 +108,34 @@ sudo tee /etc/docker/daemon.json <<-'EOF'
 }
 EOF
 ```
+我使用了截至2026年5月仍稳定可用的镜像源。你可以在文末的“当前可用的镜像源”部分找到更多选择。
+https://www.cnblogs.com/BlogNetSpace/p/19864430
 
-<font style="color:rgb(15, 17, 21);">我使用了截至2026年5月仍稳定可用的镜像源。你可以在文末的“当前可用的镜像源”部分找到更多选择。</font>
 
 ## **<font style="color:rgb(15, 17, 21);">重新加载并启动 Docker 守护进程</font>**
-<font style="color:rgb(15, 17, 21);">正确的启动方式是：先通过</font>`<font style="color:rgb(15, 17, 21);background-color:rgb(235, 238, 242);">sudo dockerd</font>`<font style="color:rgb(15, 17, 21);">启动守护进程，再使用</font>`<font style="color:rgb(15, 17, 21);background-color:rgb(235, 238, 242);">sudo docker</font>`<font style="color:rgb(15, 17, 21);">命令。</font>
-
-<font style="color:rgb(15, 17, 21);">bash</font>
-
+正确的启动方式是：先通过sudo dockerd启动守护进程，再使用sudo docker命令。
 ```plain
 # 以后台模式启动 Docker 守护进程
 sudo dockerd > /dev/null 2>&1 &
 ```
 
-**<font style="color:rgb(15, 17, 21);">注意</font>**<font style="color:rgb(15, 17, 21);">：</font>`<font style="color:rgb(15, 17, 21);background-color:rgb(235, 238, 242);">sudo dockerd &</font>`<font style="color:rgb(15, 17, 21);"> 命令会在后台启动 Docker 守护进程，并将所有输出重定向到 </font>`<font style="color:rgb(15, 17, 21);background-color:rgb(235, 238, 242);">/dev/null</font>`<font style="color:rgb(15, 17, 21);">。</font>
+注意：sudo dockerd & 命令会在后台启动 Docker 守护进程，并将所有输出重定向到 /dev/null。
 
 ## **<font style="color:rgb(15, 17, 21);">验证配置是否生效</font>**
-<font style="color:rgb(15, 17, 21);">执行以下命令，检查输出中</font><font style="color:rgb(15, 17, 21);"> </font>`<font style="color:rgb(15, 17, 21);background-color:rgb(235, 238, 242);">Registry Mirrors</font>`<font style="color:rgb(15, 17, 21);"> </font><font style="color:rgb(15, 17, 21);">一行是否包含了刚才配置的地址。</font>
+执行以下命令，检查输出中 Registry Mirrors 一行是否包含了刚才配置的地址。
 
 ```bash
 sudo docker info | grep -A 5 "Registry Mirrors"
 ```
 
 ## **<font style="color:rgb(15, 17, 21);">测试拉取</font>**
+再次运行 hello-world 镜像。
 ```bash
 sudo docker run hello-world
 ```
+此时，你应该能看到拉取成功的提示。
+
+如果你已经通过 systemctl 或其他方式启动了 Docker，那么 sudo dockerd & 可能会因端口冲突而无法启动。这种情况下，你需要先停止冲突的进程，然后再执行 sudo dockerd &。
 
 ## 结果
 如下打印信息
