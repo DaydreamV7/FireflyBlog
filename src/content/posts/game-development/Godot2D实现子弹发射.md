@@ -1,6 +1,6 @@
 ---
 title: Godot2D实现子弹发射
-published: 2026-06-06
+published: 2026-06-08
 description: Godot实现2D角色移动
 image: /assets/images/game/Godot_icon.svg
 tags: [Godot, 游戏引擎, 游戏开发]
