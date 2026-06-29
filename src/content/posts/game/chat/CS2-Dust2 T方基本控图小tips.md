@@ -6,7 +6,7 @@ image: /assets/images/game/CS2.jpg
 tags: [游戏教学, 游戏, CS2，游戏战术]
 category: 游戏教学
 draft: false
-slug: Basic-map-control-tips-for-CS2-Dust2
+slug: Game-Chat-Basic-map-control-tips-for-CS2-Dust2
 author: DaydreamV
 comment: true
 ---
