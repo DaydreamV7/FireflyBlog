@@ -44,6 +44,21 @@ if (process.env.NODE_ENV === "development") {
 
 // https://astro.build/config
 export default defineConfig({
+    //新增配置 manualChunks 手动分包：将大体积第三方依赖拆分为独立 chunk
+	vite: {
+		build: {
+		rollupOptions: {
+			output: {
+			manualChunks: {
+				'vendor-photoswipe': ['photoswipe'],
+				'vendor-katex': ['katex', 'rehype-katex', 'remark-math'],
+				'vendor-ui': ['@fancyapps/ui', 'overlayscrollbars']
+			}
+			}
+		}
+		}
+	},
+
 	site: siteConfig.site_url,
 	
 	base: "/",
