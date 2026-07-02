@@ -6,7 +6,7 @@ image: /assets/images/IT/edge.png
 tags: [IT, 电脑，运维]
 category: 运维
 draft: false
-slug: IT-Ops-CleanDiskOfC
+slug: IT-Ops-EdgeRAMOptimization
 author: DaydreamV
 comment: true
 ---
