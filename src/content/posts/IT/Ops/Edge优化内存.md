@@ -1,7 +1,7 @@
 ---
-title: C盘清理
+title: Edge优化内存
 published: 2026-07-02
-description: 清理C盘
+description: Edge占用内存多解决方法
 image: /assets/images/IT/edge.png
 tags: [IT, 电脑，运维]
 category: 运维
