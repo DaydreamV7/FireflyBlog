@@ -13,7 +13,7 @@ export const siteConfig: SiteConfig = {
 	subtitle: "个人博客",
 
 	// 站点 URL
-	site_url: "https://dreammoon.icu",
+	site_url: "https://blog.dreammoon.icu",
 
 	// 站点描述
 	description:
