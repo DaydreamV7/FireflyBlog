@@ -3,7 +3,7 @@ title: C盘清理
 published: 2026-07-02
 description: 清理C盘
 image: /assets/images/dream/真岛吾郎像素.jpg
-tags: [IT, 电脑，运维]
+tags: [IT, 电脑, 运维]
 category: 运维
 draft: false
 slug: IT-Ops-CleanDiskOfC
