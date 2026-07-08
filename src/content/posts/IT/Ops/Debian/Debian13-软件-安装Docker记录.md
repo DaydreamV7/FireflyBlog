@@ -2,9 +2,9 @@
 title: Debian13安装Docker记录
 published: 2026-05-23
 description: Debian13安装Docker记录
-image: /assets/images/dream/真岛吾郎像素.jpg
-tags: [Linux, Docker, 记录]
-category: IT-配置
+image: /assets/images/IT/debian.jpg
+tags: [Debian, Docker, 运维 , Linux , 软件安装]
+category: 运维
 draft: false
 slug: Record-of-installing-Docker-on-Debian13
 author: 均慕dreammoon
