@@ -281,18 +281,22 @@ export function applyWallpaperModeToDocument(
 	mode: WALLPAPER_MODE,
 	animate = true,
 ) {
-	// 检查是否允许切换壁纸模式
-	const isSwitchable = backgroundWallpaper.switchable ?? true;
-	if (!isSwitchable) {
-		// 如果不允许切换，直接返回，不执行任何操作
-		return;
-	}
-
 	// 获取当前的壁纸模式
 	const currentMode =
 		(document.documentElement.getAttribute(
 			"data-wallpaper-mode",
 		) as WALLPAPER_MODE) || backgroundWallpaper.mode;
+
+	// 检查是否允许切换壁纸模式
+	const isSwitchable = backgroundWallpaper.switchable ?? true;
+	if (!isSwitchable) {
+		// 不允许切换时，仍需初始化当前模式的UI状态（添加 wallpaper-initialized 等）
+		if (currentMode === mode) {
+			adjustMainContentPosition(mode, false);
+			ensureWallpaperState(mode);
+		}
+		return;
+	}
 
 	// 如果模式没有变化，直接返回
 	if (currentMode === mode) {
@@ -700,7 +704,7 @@ function adjustMainContentPosition(
 		case "banner": {
 			// Banner模式：主内容在banner下方
 			const isHome = checkIsHomePage(window.location.pathname);
-			const bannerTargetTop = "calc(var(--banner-height) - 3rem)";
+			const bannerTargetTop = "calc(var(--banner-height) - 3.5rem)";
 
 			// 禁用 CSS transition，防止整个定位过程中的值变化触发过渡动画
 			mainContent.style.setProperty("transition", "none", "important");
@@ -1181,7 +1185,7 @@ export function getDefaultBannerTitleEnabled(): boolean {
 }
 
 export function getDefaultBannerCarouselEnabled(): boolean {
-	return backgroundWallpaper.banner?.carousel?.enable ?? false;
+	return backgroundWallpaper.common?.carousel?.enable ?? false;
 }
 
 export function getStoredBannerTitleEnabled(): boolean {
@@ -1200,7 +1204,7 @@ export function getStoredBannerTitleEnabled(): boolean {
 
 export function getStoredBannerCarouselEnabled(): boolean {
 	const isSwitchable =
-		backgroundWallpaper.banner?.carousel?.switchable ?? false;
+		backgroundWallpaper.common?.carousel?.switchable ?? false;
 	if (!isSwitchable) {
 		return getDefaultBannerCarouselEnabled();
 	}
@@ -1231,7 +1235,7 @@ export function setBannerTitleEnabled(enabled: boolean): void {
 export function setBannerCarouselEnabled(enabled: boolean): void {
 	const safeEnabled = !!enabled;
 	const isSwitchable =
-		backgroundWallpaper.banner?.carousel?.switchable ?? false;
+		backgroundWallpaper.common?.carousel?.switchable ?? false;
 	if (
 		isSwitchable &&
 		typeof localStorage !== "undefined" &&
