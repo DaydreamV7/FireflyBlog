@@ -7,7 +7,7 @@ tags: [Debian , Linux,  运维, 环境配置]
 category: 运维
 draft: false
 slug: IT-Ops-Debian13RimeInput
-author: DaydreamV
+author: 均慕dreammoon
 comment: true
 ---
 # 前言
@@ -27,7 +27,7 @@ comment: true
     
 - **直接用？可以，但有局限**：Debian 13 预装的 Fcitx 5 可以让你**直接使用系统自带的拼音输入法**。如果你对输入法没有特殊要求，它完全够用。但它的可定制性远不如 RIME。
 ## 安装
-```Bash
+```bash
 sudo apt install fcitx5-rime
 ```
 ## 下载雾凇拼音
@@ -35,8 +35,7 @@ sudo apt install fcitx5-rime
 ## 配置
 调试输入法
 打开 Fcitx 5配置
-![[Linux-输入法-Fcitx配置.png]]
-
+![](../attachments/Linux-输入法-Fcitx配置.png)
 安装完成后，通过 im-config 切换输入法框架：
 
 ```Bash
@@ -46,7 +45,8 @@ im-config -n fcitx5
 > ⚠️ 踩坑点 1：执行完这一步必须重启电脑（或注销），否则系统还在运行 IBus，Fcitx5 无法接管键盘。
 ## Zip
 我是下载Release当中的full.zip
-![[Debian-输入法-Rime路径.png]]
+
+![](../attachments/Debian-输入法-Rime路径.png)
 
 发现不对劲，不如用Git
 ## Git
@@ -55,7 +55,7 @@ im-config -n fcitx5
 推荐使用 git 部署，这样以后更新词库只需要 git pull，非常方便。
 
 
-```Bash
+```bash
 # 1. 创建 Fcitx5 的 Rime 目录（如果没有）
 mkdir -p ~/.local/share/fcitx5/rime
 
@@ -71,11 +71,11 @@ git clone --depth 1 https://github.com/iDvel/rime-ice.git
 
 在 ~/.local/share/fcitx5/rime 目录下新建（或编辑）default.custom.yaml
 
-```Bash
+```bash
 sudo nano ~/.local/share/fcitx5/rime/default.custom.yaml
 ## 如果没有这个文件需要自行创建
 ```
-```Bash
+```bash
 patch:
   # 1. 只有这一行，Rime 才会真正使用雾淞拼音
   schema_list:

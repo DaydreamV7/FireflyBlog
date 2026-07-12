@@ -7,11 +7,11 @@ tags: [Debian , Linux,  运维, 环境配置, 网络]
 category: 运维
 draft: false
 slug: IT-Ops-Debian13Network-Troubleshooting
-author: DaydreamV
+author: 均慕dreammoon
 comment: true
 ---
 # 场景
-![[Debian-网络故障-DHU.png]]
+![](../attachments/Debian-网络故障-DHU.png)
 # 解决方案
 解决方案由DeepSeek AI生成
 
@@ -84,7 +84,7 @@ arp -n
 ## 🧪 第四步：验证修复效果
 
 重新获取IP后，按顺序测试：
-```Bash
+```bash
 # 1. 先看自己拿没拿到IP
 ip addr show ens33
 # 2. 再ping网关（这次应该通了）

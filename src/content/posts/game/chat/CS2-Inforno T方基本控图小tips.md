@@ -7,7 +7,7 @@ tags: [游戏教学, 游戏, CS2，游戏战术]
 category: 游戏教学
 draft: false
 slug: Game-Chat-Basic-map-control-tips-for-CS2-Inferno
-author: DaydreamV
+author: 均慕dreammoon
 comment: true
 ---
 # 背景

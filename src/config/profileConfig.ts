@@ -12,7 +12,7 @@ export const profileConfig: ProfileConfig = {
 	name: "均慕Dreammoon",
 
 	// 个人签名
-	bio: "宣告我的存在，并不断成长",
+	bio: "宣告我的存在，并不断成为月亮魔法师",
 
 	// 链接配置
 	// 已经预装的图标集：fa7-brands，fa7-regular，fa7-solid，material-symbols，simple-icons
@@ -27,24 +27,24 @@ export const profileConfig: ProfileConfig = {
 		// 	url: "https://qm.qq.com/q/ZGsFa8qX2G",
 		// 	showName: false,
 		// },
-		// {
-		// 	name: "GitHub",
-		// 	icon: "fa7-brands:github",
-		// 	url: "https://github.com/CuteLeaf",
-		// 	showName: false,
-		// },
+		{
+			name: "GitHub",
+			icon: "fa7-brands:github",
+			url: "https://github.com/DaydreamV7",
+			showName: false,
+		},
 		// {
 		// 	name: "Email",
 		// 	icon: "fa7-solid:envelope",
 		// 	url: "mailto:xiaye@msn.com",
 		// 	showName: false,
 		// },
-		// {
-		// 	name: "RSS",
-		// 	icon: "fa7-solid:rss",
-		// 	url: "/rss/",
-		// 	showName: false,
-		// },
+		{
+			name: "RSS",
+			icon: "fa7-solid:rss",
+			url: "/rss/",
+			showName: false,
+		},
 	],
 
 };
