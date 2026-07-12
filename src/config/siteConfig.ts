@@ -96,62 +96,20 @@ export const siteConfig: SiteConfig = {
 	// 示例："Asia/Shanghai", "UTC", 如果为空，则按照构建服务器的时区进行时区转换
 	timezone: "Asia/Shanghai",
 
-<<<<<<< HEAD
-	// 提醒框（Admonitions）配置，修改后需要重启开发服务器才能生效
-	// 主题：'github' | 'obsidian' | 'vitepress'，每个主题风格和语法不同，可根据喜好选择
-	rehypeCallouts: {
-		theme: "github",
-	},
-
-	// 文章页底部的"上次编辑时间"卡片开关
-	showLastModified: true,
-
-	// 文章过期阈值（天数），超过此天数才显示"上次编辑"卡片
-	outdatedThreshold: 30,
-
-	// 是否开启分享海报生成功能
-	sharePoster: true,
-
-	// OpenGraph图片功能,注意开启后要渲染很长时间，不建议本地调试的时候开启
-	generateOgImages: false,
-
-	// bangumi配置
-	bangumi: {
-		// Bangumi用户ID
-		userId: "1249400",
-		// 条目类型排序，数组中的类型将按顺序优先展示
-		// 可选值: "anime" | "book" | "music" | "game" | "real" (暂不支持"real"类型)
-		// 未列出的类型将按默认顺序排在后面
-		categoryOrder: ["anime", "book", "music", "game"],
-	},
-
-	// 页面开关配置 - 控制特定页面的访问权限，设为false会返回404
-	// bangumi的数据为编译时获取的，所以不是实时数据，请配置bangumi.userId
-	pages: {
-		// 友链页面开关
-		friends: false,
-		// 赞助页面开关
-		sponsor: false,
-=======
 	// 页面开关配置 - 控制特定页面的访问权限，设为false会返回404并自动隐藏对应的导航栏菜单项
 	pages: {
 		// 友链页面开关
 		friends: true,
 		// 打赏页面开关
 		sponsor: true,
->>>>>>> master
 		// 留言板页面开关，需要配置评论系统
 		guestbook: true,
 		// 番组计划页面开关，含追番、游戏、书籍和音乐
 		bangumi: true,
 		// 相册页面开关
-<<<<<<< HEAD
-		gallery: false,
-=======
 		gallery: true,
 		// 追番页面开关
 		anime: true,
->>>>>>> master
 	},
 
 	// 分类导航栏开关，在首页和归档页顶部显示分类快捷导航
@@ -286,17 +244,7 @@ export const siteConfig: SiteConfig = {
 		// 为特定域名的图片添加 referrerpolicy="no-referrer" 属性
 		// 支持通配符 *，例如：["i0.hdslb.com", "*.bilibili.com"]
 		// 可解决指定域名图片加载时的 403 问题（如防盗链图片）
-<<<<<<< HEAD
-		noReferrerDomains: [
-			"i0.hdslb.com",     // B站图床
-			"i1.hdslb.com",
-			"i2.hdslb.com",
-			"*.bilibili.com",   // 支持通配符
-			"cdn.nlark.com",
-		],
-=======
-		noReferrerDomains: ["*.hdslb.com", "*.bilibili.com"],
->>>>>>> master
+		noReferrerDomains: ["*.hdslb.com", "*.bilibili.com", "cdn.nlark.com",],
 	},
 
 	// 站点语言，在本配置文件顶部SITE_LANG定义

