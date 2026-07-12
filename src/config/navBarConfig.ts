@@ -52,7 +52,7 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 			...(siteConfig.pages.sponsor ? [LinkPreset.Sponsor] : []),
 
 			// 关于页面
-			// LinkPreset.About,
+			LinkPreset.About,
 		],
 	});
 
@@ -64,12 +64,12 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 
 		// 子菜单
 		children: [
-			// {
-			// 	name: "GitHub",
-			// 	url: "https://github.com/CuteLeaf/Firefly",
-			// 	external: true,
-			// 	icon: "fa7-brands:github",
-			// },
+			{
+				name: "GitHub",
+				url: "https://github.com/DaydreamV7",
+				external: true,
+				icon: "fa7-brands:github",
+			},
 			// {
 			// 	name: "Gitee",
 			// 	url: "https://gitee.com/CuteLeaf/Firefly",
@@ -82,6 +82,11 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 			// 	external: true,
 			// 	icon: "fa7-brands:qq",
 			// },
+			{
+				name: "Firefly使用文档",
+				url: "https://docs-firefly.cuteleaf.cn/zh/",
+				external: true,
+			},
 		],
 	});
 

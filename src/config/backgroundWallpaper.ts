@@ -67,6 +67,7 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			subtitle: [
 				"Hello , World!",
 				"Dream to the Moon, Love to the Stars",
+				"天空拥抱大海，内心充满澎湃。",
 			],
 			// 主页横幅副标题字体大小
 			subtitleSize: "1.5rem",

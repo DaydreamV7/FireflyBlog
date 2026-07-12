@@ -7,7 +7,7 @@ tags: [IT, 电脑, 运维]
 category: 运维
 draft: false
 slug: IT-Ops-CleanDiskOfC
-author: DaydreamV
+author: 均慕dreammoon
 comment: true
 ---
 

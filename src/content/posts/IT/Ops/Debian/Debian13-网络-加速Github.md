@@ -7,7 +7,7 @@ tags: [Debian , Linux,  运维, 环境配置, 网络]
 category: 运维
 draft: false
 slug: IT-Ops-Debian13NetworkGithub
-author: DaydreamV
+author: 均慕dreammoon
 comment: true
 ---
 # 前言
@@ -19,7 +19,7 @@ comment: true
 [maxiaof/github-hosts: 通过修改Hosts解决国内Github经常抽风访问不到,每日更新](https://github.com/maxiaof/github-hosts)
 
 ## 修改Hosts文件
-```Bash
+```bash
 sudo /etc/hosts
 ```
 
@@ -32,11 +32,11 @@ XXX.XXX.XX.X github.global.ssl.fastly.net
 ## 更新DNS服务器
 如果你的Debian13没有安装刷新DNS相关软件，那么是没有缓存直接生效的。
 1. **编辑 `/etc/resolv.conf`**：
-```Bash
+```bash
 sudo nano /etc/resolv.conf
 ```
 1. **添加或修改 `nameserver` 行**：  
-```Text
+```text
 nameserver 8.8.8.8
 nameserver 1.1.1.1
 nameserver 223.5.5.5

@@ -7,22 +7,22 @@ tags: [运维, 环境配置 , Debian , Linux]
 category: 运维
 draft: false
 slug: IT-Ops-Debian13desktop-icon
-author: DaydreamV
+author: 均慕dreammoon
 comment: true
 ---
 # 前言
 目的：我需要桌面图标来避免按Win键来找应用，而是直接通过桌面图标实现访问
 # 具体步骤
 ## 更新软件源和软件包
-```Shell
+```shell
 sudo apt update && upgrade -y
 ```
 ## 安装应用
-```Shell
+```shell
 sudo apt install gnome-shell-extension-desktop-icons-ng
 ```
 出现问题如下
-```Shell
+```shell
 正在解析依赖...有错误！
 
 ......
@@ -36,11 +36,11 @@ sudo apt install gnome-shell-extension-desktop-icons-ng
 [Debian | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror](https://mirrors.tuna.tsinghua.edu.cn/help/debian/)
 
 对sources.list备份
-```Shell
+```shell
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.Alibak
 ```
 修改内容
-```Shell
+```shell
 sudo nano /etc/apt/sources.list
 ```
 全选删除
@@ -56,16 +56,16 @@ sudo nano /etc/apt/sources.list
 然后粘贴即可
 ## 发现没有扩展
 再次安装成功后发现根据参考文章都有扩展，而我的环境没有，安装
-```Bash
+```bash
 sudo apt install gnome-shell-extensions
 ```
 此时显示应用里发现有扩展了。
 通过重启Debian解决了
 然后启动应用桌面显示图标
-![[Debian-软件-显示桌面图标.png]]
+![](../attachments/Debian-软件-显示桌面图标.png)
 
 通过安装Add to Desktop能够将应用添加到桌面
-![[‘’Debian-软件-添加桌面扩展.png]]
+![](../attachments/Debian-软件-添加桌面扩展.png)
 
 
 
