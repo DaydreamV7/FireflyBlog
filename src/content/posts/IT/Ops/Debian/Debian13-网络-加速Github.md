@@ -24,7 +24,7 @@ sudo /etc/hosts
 ```
 
 先将如下添加进去
-```Hosts
+```text
 XXX.XX.XXX.X github.com
 XXX.XXX.XX.X github.global.ssl.fastly.net
 ```

@@ -44,7 +44,7 @@ sudo cp /etc/apt/sources.list /etc/apt/sources.list.Alibak
 sudo nano /etc/apt/sources.list
 ```
 全选删除
-```MarkDown
+```markdown
 # 基本操作步骤
 
 1. **打开文件**：在终端中输入 `nano 文件名` 打开需要编辑的文件。

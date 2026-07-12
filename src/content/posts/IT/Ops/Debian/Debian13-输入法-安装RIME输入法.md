@@ -38,7 +38,7 @@ sudo apt install fcitx5-rime
 ![](../attachments/Linux-输入法-Fcitx配置.png)
 安装完成后，通过 im-config 切换输入法框架：
 
-```Bash
+```bash
 im-config -n fcitx5
 ```
 
