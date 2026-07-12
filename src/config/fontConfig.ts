@@ -81,6 +81,32 @@ export const fontsList: FontDefinition[] = [
 		},
 		fallbacks: ["sans-serif"],
 	},
+	{
+		name: "长坂点宋",
+		cssVariable: "--font-changbandiansong",
+		provider: "local",
+		options: {
+			variants: [
+				{
+					src: ["./public/assets/fonts/ChangBanDianSong-12.ttf"],
+				},
+			],
+		},
+		fallbacks: ["sans-serif"],
+	},
+	{
+		name: "铁蒺藜体",
+		cssVariable: "--font-tiejili",
+		provider: "local",
+		options: {
+			variants: [
+				{
+					src: ["./public/assets/fonts/TiejiliSC-Regular.otf"],
+				},
+			],
+		},
+		fallbacks: ["sans-serif"],
+	},
 ];
 
 // ─── 字体选择与区域覆盖 ─────────────────────────────────────
@@ -94,11 +120,11 @@ export const fontConfig: FontSelectionConfig = {
 	// 各区域独立字体设置（填写上方 fonts 中的 cssVariable，留空则使用全局 selected 字体）
 	// 例如：bannerTitleFont: "--font-inter", 表示主页横幅主标题使用 Inter 字体
 	// 主页横幅主标题字体
-	bannerTitleFont: "--font-zen-maru-gothic",
+	bannerTitleFont: "--font-changbandiansong",
 	// 主页横幅副标题字体
-	bannerSubtitleFont: "--font-inter",
+	bannerSubtitleFont: "--font-changbandiansong",
 	// 导航栏标题字体
-	navbarTitleFont: "",
+	navbarTitleFont: "--font-tiejili",
 	// 代码块字体（用于代码高亮和等宽字体场景）
 	codeFont: "--font-jetbrains-mono",
 

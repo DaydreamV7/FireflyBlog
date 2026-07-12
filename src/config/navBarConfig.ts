@@ -97,14 +97,8 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 			// },
 			{
 				name: "Firefly使用文档",
-				url: "https://docs-firefly.cuteleaf.cn/zh/",
+				url: "https://docs-firefly.cuteleaf.cn/",
 				external: true,
-			},
-			{
-				name: "Firefly文档",
-				url: "https://docs-firefly.cuteleaf.cn",
-				external: true,
-				icon: "material-symbols:docs",
 			},
 		],
 	});
