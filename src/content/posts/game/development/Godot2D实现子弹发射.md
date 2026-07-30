@@ -6,7 +6,7 @@ image: /assets/images/game/Godot_icon.svg
 tags: [Godot, 游戏引擎, 游戏开发]
 category: 游戏开发
 draft: false
-slug: Godot2D-implementing-bullet-shooting
+slug: Godot-2D-implementing-bullet-shooting
 author: 均慕dreammoon
 comment: true
 ---
