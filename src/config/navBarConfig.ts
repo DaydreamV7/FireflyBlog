@@ -4,6 +4,7 @@ import {
 	type NavBarSearchConfig,
 	NavBarSearchMethod,
 } from "../types/navBarConfig";
+import { toolsConfig } from "./toolsConfig";
 
 // ============================================================================
 // 导航栏配置 - 根据顺序动态生成导航栏链接
@@ -38,6 +39,22 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 
 	// 留言板
 	links.push(LinkPresets.Guestbook);
+
+	// 工具（功能区）- 菜单项由 toolsConfig 自动生成，无需在这里重复维护
+	const enabledTools = toolsConfig.tools.filter(
+		(tool) => tool.enabled !== false,
+	);
+
+	if (enabledTools.length > 0) {
+		// 注意：顶栏中心菜单在 1440px 宽度下已经顶到预算（再多一项文字就会换行），
+		// 所以这里只放一个"工具"入口指向工具箱总览页，不再展开下拉子菜单，
+		// 具体工具有哪些交给 /tools/ 页面用卡片展示。
+		links.push({
+			name: toolsConfig.navName,
+			url: toolsConfig.navUrl ?? "/tools/",
+			icon: toolsConfig.showNavIcon === false ? undefined : toolsConfig.navIcon,
+		});
+	}
 
 	// 我的及其子菜单
 	links.push({

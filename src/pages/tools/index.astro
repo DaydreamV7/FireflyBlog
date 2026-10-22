@@ -1,0 +1,64 @@
+---
+import { Icon } from "astro-icon/components";
+import { siteConfig, toolsConfig } from "@/config";
+import MainGridLayout from "@/layouts/MainGridLayout.astro";
+import { url } from "@/utils/url-utils";
+
+// 页面开关关闭时与站内其他页面保持一致，直接跳 404
+if (!siteConfig.pages.tools) {
+	return Astro.redirect("/404/");
+}
+
+const tools = toolsConfig.tools.filter((tool) => tool.enabled !== false);
+const title = toolsConfig.title;
+const description = toolsConfig.description;
+---
+
+<MainGridLayout title={title} description={description}>
+    <div class="card-base px-6 py-6 md:px-9 md:py-8">
+        <div class="mb-6 flex items-start gap-3">
+            <div class="mt-0.5 h-8 w-8 shrink-0 rounded-lg bg-(--primary) flex items-center justify-center text-white dark:text-black/70">
+                <Icon name={toolsConfig.navIcon || "material-symbols:handyman-outline"} class="text-[1.5rem]" />
+            </div>
+            <div>
+                <h1 class="text-3xl font-bold text-90">{title}</h1>
+                <p class="mt-2 text-base leading-relaxed text-50">{description}</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+            {tools.map((tool) => (
+                <a
+                    href={url(tool.url)}
+                    class="group flex flex-col gap-3 rounded-(--radius-large) border border-(--line-divider) p-5 transition-colors hover:border-(--primary) hover:bg-(--btn-regular-bg)"
+                >
+                    <div class="flex items-center gap-3">
+                        <div class="h-9 w-9 shrink-0 rounded-lg bg-(--btn-regular-bg) flex items-center justify-center text-(--primary)">
+                            <Icon name={tool.icon || "material-symbols:build-outline"} class="text-[1.35rem]" />
+                        </div>
+                        <span class="text-xl font-bold text-90 transition-colors group-hover:text-(--primary)">
+                            {tool.name}
+                        </span>
+                        {tool.ready === false && (
+                            <span class="ml-auto rounded-full bg-(--btn-regular-bg) px-2.5 py-0.5 text-xs text-50">即将上线</span>
+                        )}
+                    </div>
+                    <p class="text-sm leading-relaxed text-75">{tool.description}</p>
+                    {tool.tags && tool.tags.length > 0 && (
+                        <div class="flex flex-wrap gap-2">
+                            {tool.tags.map((tag) => (
+                                <span class="rounded-md bg-(--btn-regular-bg) px-2 py-0.5 text-xs text-50">{tag}</span>
+                            ))}
+                        </div>
+                    )}
+                </a>
+            ))}
+        </div>
+
+        {tools.length === 0 && (
+            <p class="rounded-lg bg-(--btn-regular-bg) px-4 py-6 text-center text-sm text-50">
+                还没有启用的工具，可在 src/config/toolsConfig.ts 中添加。
+            </p>
+        )}
+    </div>
+</MainGridLayout>

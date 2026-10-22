@@ -111,6 +111,8 @@ export const siteConfig: SiteConfig = {
 		gallery: true,
 		// 追番页面开关
 		anime: true,
+		// 工具箱页面开关，设为 false 会隐藏导航栏的「工具」入口，并让 /tools/ 返回 404
+		tools: true,
 	},
 
 	// 分类导航栏开关，在首页和归档页顶部显示分类快捷导航

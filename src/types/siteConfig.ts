@@ -85,6 +85,7 @@ export type SiteConfig = {
 		bangumi: boolean;
 		gallery: boolean; // 相册页面开关
 		anime: boolean; // 追番页面开关
+		tools: boolean; // 工具箱页面开关（控制 /tools 下的所有小工具）
 	};
 
 	// 分类导航栏开关

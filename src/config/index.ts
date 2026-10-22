@@ -61,3 +61,4 @@ export { sidebarLayoutConfig } from "./sidebarConfig"; // 侧边栏布局配置
 // 核心配置
 export { siteConfig } from "./siteConfig"; // 站点基础配置
 export { sponsorConfig } from "./sponsorConfig"; // 打赏配置
+export { toolsConfig } from "./toolsConfig"; // 工具箱配置（前台小工具注册表）

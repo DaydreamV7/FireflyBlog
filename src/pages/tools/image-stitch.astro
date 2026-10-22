@@ -1,0 +1,38 @@
+---
+import { Icon } from "astro-icon/components";
+import ImageStitch from "@/components/pages/tools/ImageStitch.svelte";
+import { siteConfig, toolsConfig } from "@/config";
+import MainGridLayout from "@/layouts/MainGridLayout.astro";
+import { url } from "@/utils/url-utils";
+
+if (!siteConfig.pages.tools) {
+	return Astro.redirect("/404/");
+}
+
+const tool = toolsConfig.tools.find((item) => item.id === "image-stitch");
+const title = tool?.name || "图片拼接";
+const description =
+	tool?.description || "把多张图片自上而下拼成一张长图，全程在浏览器本地完成。";
+---
+
+<MainGridLayout title={title} description={description}>
+    <div class="card-base px-6 py-6 md:px-9 md:py-8">
+        <nav class="mb-4 flex items-center gap-1.5 text-sm text-50">
+            <a href={url("/tools/")} class="transition-colors hover:text-(--primary)">{toolsConfig.navName}</a>
+            <Icon name="material-symbols:chevron-right-rounded" class="text-base" />
+            <span class="text-75">{title}</span>
+        </nav>
+
+        <div class="mb-6 flex items-start gap-3">
+            <div class="mt-0.5 h-8 w-8 shrink-0 rounded-lg bg-(--primary) flex items-center justify-center text-white dark:text-black/70">
+                <Icon name={tool?.icon || "material-symbols:view-agenda-outline"} class="text-[1.5rem]" />
+            </div>
+            <div>
+                <h1 class="text-3xl font-bold text-90">{title}</h1>
+                <p class="mt-2 text-base leading-relaxed text-50">{description}</p>
+            </div>
+        </div>
+
+        <ImageStitch client:load />
+    </div>
+</MainGridLayout>
